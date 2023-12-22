@@ -7,7 +7,7 @@ WORKDIR /app
 # Copy package.json and package-lock.json to the working directory
 COPY package*.json ./
 
-# Install app dependencies, including Material-UI 5
+# Install app dependencies
 RUN npm install
 
 # Copy the rest of the application code to the working directory
@@ -20,4 +20,4 @@ RUN npm run build
 EXPOSE 5173
 
 # Define the command to start the app
-CMD ["npm", "start", "--", "--host", "0.0.0.0"]
+CMD ["npm", "run", "dev"]
